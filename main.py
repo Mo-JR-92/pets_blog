@@ -20,6 +20,7 @@ Bootstrap(app)
 
 
 # # CONNECT TO DB
+
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -245,6 +246,6 @@ def delete_post(post_id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(host='0.0.0.0', port=5000)
 
 
